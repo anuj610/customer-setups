@@ -1,0 +1,63 @@
+.unbxd-as-wrapper {
+    border-top: 1px solid #CCC;
+    margin-top: 3px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    position: absolute;
+    z-index: 2000;
+    font-family : "ProximaNova-Regular";
+    font-size : 12px;
+}
+
+.unbxd-as-wrapper ul li:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+.unbxd-as-wrapper ul li.unbxd-as-header, .unbxd-as-wrapper ul li.unbxd-as-header:hover {
+    background-color: #D3AB6D;
+    margin: 3px;
+    padding: 6px 9px;
+    font-size : 13px;
+}
+
+ul li.unbxd-as-header:first-child {
+    border-radius: 3px 3px 0 0;
+}
+
+.unbxd-as-wrapper strong, .unbxd-as-wrapper ul li.unbxd-as-insuggestion {
+    color: #d3ab6d !important;
+}
+
+.unbxd-as-wrapper ul li .unbxd-as-popular-product-price {
+    float:none;
+}
+
+.unbxd-as-wrapper span#as-price {
+    float:right;
+}
+
+.unbxd-as-wrapper ul li#unbxd-message {
+    text-align: center;
+    background-color: #d3ab6d;
+    margin: 3px;
+    padding: 6px 9px;
+    font-size : 12px;
+    border-radius: 0 0 3px 3px;
+}
+
+.unbxd-as-wrapper ul li#unbxd-message > a {
+    color: #fff;
+}
+
+.unbxd-widgets .unbxd-desc span {
+    color: #D3AB6D;
+}
+
+.unbxd-as-wrapper ul li.unbxd-ac-selected, .unbxd-as-wrapper ul li:hover {
+    background-color: #e9e9e9;
+}
+
+.unbxd-widget-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E2E2E2;
+}
