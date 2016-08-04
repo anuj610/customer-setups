@@ -1,0 +1,116 @@
+/* 
+    Created on : Jun 15, 2016, 5:44:55 PM
+    Author     : anuj
+*/
+
+.unbxd-as-wrapper {
+    text-align: left;
+    box-shadow: 0px 0px 10px #ccc, -10px 8px 15px #ccc, 10px 8px 15px #ccc;
+}
+
+.unbxd-as-wrapper ul li.unbxd-as-header, .unbxd-as-wrapper ul li.unbxd-as-header:hover {
+    background-color: #7E9C5B !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.unbxd-as-wrapper ul.unbxd-as-maincontent li:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+.unbxd-as-wrapper ul.unbxd-as-maincontent li.unbxd-ac-selected, .unbxd-as-wrapper ul.unbxd-as-maincontent li:hover {
+    background: #eee;
+} 
+
+.unbxd-as-wrapper ul.unbxd-as-sidecontent li.unbxd-ac-selected, .unbxd-as-wrapper ul.unbxd-as-sidecontent li:hover {
+    background: #fff;
+} 
+
+.unbxd-as-wrapper ul li.unbxd-as-popular-product {
+    display: inline-block;
+    vertical-align: top;
+    width: 33.3333%;
+    box-sizing: border-box;
+}
+
+.unbxd-as-wrapper ul li .unbxd-as-popular-product-name {
+    padding: 0;
+    text-align: center;
+    height: 50px;
+    overflow: hidden;
+}
+
+.unbxd-as-wrapper ul li .unbxd-as-popular-product-image-container {
+    float: none;
+    text-align: center;
+    margin: 0 auto !important;
+}
+
+.unbxd-as-wrapper ul li .unbxd-as-popular-product-image-container, .unbxd-as-wrapper ul li .unbxd-as-popular-product-image-container img {
+    width: 120px;
+    height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.unbxd-as-wrapper ul li .unbxd-as-popular-product-image-container {
+    background-color: #f5f5f5;
+}
+
+.unbxd-as-wrapper ul li.unbxd-as-insuggestion {
+    color: #55a32a !important;
+}
+
+.unbxd-as-wrapper ul li .unbxd-as-popular-product-name {
+    margin-top: 5px;
+}
+
+.unbxd-as-wrapper ul li.unbxd-as-popular-product  {
+    padding: 10px 15px;
+}
+
+.unbxd-as-wrapper ul li .unbxd-as-popular-product-rating {
+    padding: 0;
+    height: 15px;
+    line-height: 15px;
+    width: 70%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.unbxd-as-wrapper ul li .unbxd-as-popular-product-rating span {
+    background-image: url(http://cdn.powerreviews.com/repos/17728/pr/pwr/engine/images/stars_small.gif);
+    background-repeat: no-repeat;
+    padding: 0;
+    height: 15px;
+    line-height: 15px;
+    width: 83px;
+    background-position: 0px 0px;
+    float: left;
+}
+
+.unbxd-as-wrapper ul li .unbxd-as-popular-product-price {
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    float: none;
+    padding: 0;
+}
+
+.unbxd-as-wrapper ul li .unbxd-as-popular-product-price span {
+    float: right;
+}
+
+.unbxd-as-popular-product:hover {
+    background: rgba(152, 175, 121, 0.42) !important;
+    -webkit-transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    transition: all 1000ms linear;
+    cursor: pointer;
+}
