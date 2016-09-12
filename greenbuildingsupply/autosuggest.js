@@ -7,13 +7,37 @@
         return pRating * (-36);
     });
     
-    function titleCase(pString) {
-        var strArr = pString.split('_');
-        var ret_str = '';
-        for (var i = 0; i < strArr.length; i++) {
-            ret_str += '_' + strArr[i].charAt(0).toUpperCase() + strArr[i].slice(1);
+    function getFacetName(pString) {
+        var ret_str = pString;
+        
+        if(pString === 'manufacturer') {
+            ret_str = 'Brand_fq';
+        } else if(pString === 'shade') {
+            ret_str = 'Shade_fq';
+        } else if(pString === 'installation') {
+            ret_str = 'Installation_Method_fq';
+        } else if(pString === 'hardness') {
+            ret_str = 'Hardness_fq';
+        } else if(pString === 'construction') {
+            ret_str = 'Construction_fq';
+        } else if(pString === 'edge') {
+            ret_str = 'Edge_Profile_fq';
+        } else if(pString === 'floor_type') {
+            ret_str = 'Floor_Type_fq';
+        } else if(pString === 'finish') {
+            ret_str = 'Finish_fq';
+        } else if(pString === 'material') {
+            ret_str = 'Wood_Species_fq';
+        } else if(pString === 'category') {
+            ret_str = 'category';
+        } else {
+            ret_str = pString.split('_')
+                        .map(function(x) { return x.charAt(0).toUpperCase() + x.slice(1); })
+                        .join('_')
+                        + '_fq';
         }
-        return ret_str.slice(1);
+        
+        return ret_str;
     }
 
     unbxdAutoSuggestFunction($, Handlebars);
@@ -50,7 +74,7 @@
             , onItemSelect: function (data, original) {
                 if (data.type == "IN_FIELD") {
                     if (data.filtername)
-                        window.location = relative_search_url + '?search_query=' + encodeURIComponent(data.value) + '&filter=' + titleCase(data.filtername) + '_fq:' + encodeURIComponent('"' + data.filtervalue + '"')
+                        window.location = relative_search_url + '?search_query=' + encodeURIComponent(data.value) + '&filter=' + getFacetName(data.filtername) + ':' + encodeURIComponent('"' + data.filtervalue + '"')
                     else
                         this.input.form.submit();
                 } else if (data.type == "POPULAR_PRODUCTS") {
