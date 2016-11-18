@@ -23,11 +23,11 @@
         } else if(pString === 'edge') {
             ret_str = 'Edge_Profile_fq';
         } else if(pString === 'floor_type') {
-            ret_str = 'Floor_Type_fq';
-        } else if(pString === 'finish') {
+            ret_str = 'floor_type';
+        } else if(pString === 'custitemfinishfacet') {
             ret_str = 'Finish_fq';
         } else if(pString === 'material') {
-            ret_str = 'Wood_Species_fq';
+            ret_str = 'Material_fq';
         } else if(pString === 'category') {
             ret_str = 'category';
         } else {
@@ -47,9 +47,15 @@
 
     $(function () {
         var relative_url = window.location.origin;
-        var relative_search_url = relative_url + '/';
+        var relative_search_url = relative_url + '/search/';
+        
+        $('a#srhImg').on('click', function() {
+            window.location.href = relative_search_url + '?search_query=' + $("#search2").val();
+            
+            return false;
+        });
 
-        $("#search2").unbxdautocomplete({
+        var unbxdASObj = $("#search2").unbxdautocomplete({
             siteName: UnbxdSiteName
             , APIKey: UnbxdApiKey
             , minChars: 1
@@ -66,7 +72,7 @@
             , showCarts: false
             , cartType: "separate"
             , noResultTpl: function (query) {
-                return 'No results found for ' + decodeURI(query);
+                return 'No results found for ' + decodeURIComponent(query);
             }
             , onSimpleEnter: function () {
                 this.input.form.submit();
@@ -77,7 +83,7 @@
                         window.location = relative_search_url + '?search_query=' + encodeURIComponent(data.value) + '&filter=' + getFacetName(data.filtername) + ':' + encodeURIComponent('"' + data.filtervalue + '"')
                     else
                         this.input.form.submit();
-                } else if (data.type == "POPULAR_PRODUCTS") {
+                } else if (data.type == "POPULAR_PRODUCTS" || data.type == "POPULAR_PRODUCTS_FILTERED") {
                     window.location = original.productUrl;
                 } else {
                     this.input.form.submit();
@@ -86,9 +92,9 @@
             , inFields: {
                 count: 2
                 , fields: {
-                    'brand': 2,
+                    'manufacturer': 2,
                     'material': 2,
-                    'finish': 2,
+                    'custitemfinishfacet': 2,
                     'construction': 2,
                     'installation': 2,
                     'edge': 2
@@ -162,6 +168,8 @@
             }
             , filtered: true
         });
+        
+        unbxdASObj[0].auto.addFilter("-unbxd_availability_filter", "false");
     });
 
     (function () {
